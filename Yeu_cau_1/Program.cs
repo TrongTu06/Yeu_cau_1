@@ -38,48 +38,124 @@ namespace Yeu_cau_1
         {
             return 0;
         }
-        class GiangVienCH : GiangVien
+        public class GiangVienCH : GiangVien
         {
-            private float hesoluong;
-            public GiangVienCH() : base()
+            public float hesoluong { get; set; }
+
+            public GiangVienCH() { }
+
+            public GiangVienCH(string maso, string hoten, int namsinh, float hesoluong)
+                : base(maso, hoten, namsinh)
             {
-                hesoluong = 0;
+                hesoluong = hesoluong;
             }
-            public GiangVienCH (string maso, string hoten, int namsinh, float hesoluong): base(maso, hoten, namsinh)
-            {
-                this.hesoluong = hesoluong;
-            }
-            public float hesoluon
-            {
-                get { return hesoluong; }
-                set { hesoluong = value; }
-            }
+
             public override void Nhap()
             {
                 base.Nhap();
-                Console.Write("Nhập hệ số lương");
+                Console.Write("Nhập hệ số lương: ");
                 hesoluong = float.Parse(Console.ReadLine());
             }
-            public override int Tinhluong()
+
+            public override int linhluon()
             {
-                return (int)(hesoluong * 23400200);
+                return (int)(hesoluong * 2340000);
             }
-            class giangviengtg : GiangVien
+
+            public override void xuat()
             {
-                sotietday = 0;
+                base.xuat();
+                Console.WriteLine($"Hệ số lương: {hesoluong}, Lương: {tinhluong()}");
             }
-            public giangviengtg(string maso, string hoten, int namsinh, int sotietday)
+        }
+        public class giangVienCH : GiangVien
+        {
+            public float Hesoluong { get; set; }
+
+            public giangVienCH() { }
+
+            public giangVienCH(string maso, string hoten, int namsinh, float hesoluong)
+                : base(maso, hoten, namsinh)
             {
-                this.sotietday = sotietday;
+                Hesoluong = hesoluong;
             }
-            public override void nhap()
+
+            public override void Nhap()
             {
                 base.Nhap();
-                Console.WriteLine("Nhập số tiết dạy:");
-                sotietday = int.Parse(Console.ReadLine());
+                Console.Write("Nhập hệ số lương: ");
+                Hesoluong = float.Parse(Console.ReadLine());
             }
+
             public override int TinhLuong()
             {
+                return (int)(Hesoluong * 2340000);
+            }
+
+            public override void xuat()
+            {
+                base.xuat();
+                Console.WriteLine($"Hệ số lương: {Hesoluong}, Lương: {TinhLuong()}");
+            }
+            public class GiangVienCH : GiangVien
+            {
+                public float Hesoluong { get; set; }
+
+                public GiangVienCH() { }
+
+                public GiangVienCH(string maso, string hoten, int namsinh, float hesoluong)
+                    : base(maso, hoten, namsinh)
+                {
+                    Hesoluong = hesoluong;
+                }
+
+                public override void Nhap()
+                {
+                    base.Nhap();
+                    Console.Write("Nhập hệ số lương: ");
+                    Hesoluong = float.Parse(Console.ReadLine());
+                }
+
+                public override int TinhLuong()
+                {
+                    return (int)(Hesoluong * 2340000);
+                }
+
+                public override void xuat()
+                {
+                    base.xuat();
+                    Console.WriteLine($"Hệ số lương: {Hesoluong}, Lương: {TinhLuong()}");
+                }
+                public class giangVienCH : GiangVien
+                {
+                    public float Hesoluong { get; set; }
+
+                    public giangVienCH() { }
+
+                    public giangVienCH(string maso, string hoten, int namsinh, float hesoluong)
+                        : base(maso, hoten, namsinh)
+                    {
+                        Hesoluong = hesoluong;
+                    }
+
+                    public override void Nhap()
+                    {
+                        base.Nhap();
+                        Console.Write("Nhập hệ số lương: ");
+                        Hesoluong = float.Parse(Console.ReadLine());
+                    }
+
+                    public override int TinhLuong()
+                    {
+                        return (int)(Hesoluong * 2340000);
+                    }
+
+                    public override void xuat()
+                    {
+                        base.xuat();
+                        Console.WriteLine($"Hệ số lương: {Hesoluong}, Lương: {TinhLuong()}");
+                    }
+                }
             }
         }
     }
